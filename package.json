@@ -1,0 +1,22 @@
+{
+  "name": "reddit-search",
+  "version": "1.0.0",
+  "description": "An app that searches articles on Reddit.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Zalán Zubik",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
