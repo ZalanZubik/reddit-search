@@ -31,7 +31,7 @@
           </select>
         </div>
       </div>
-      <input type="submit" value="Submit" class="submit-btn" />
+      <input type="submit" value="Search" class="submit-btn" />
     </form>
   </section>
 </template>
@@ -106,7 +106,7 @@ h2 {
   font-weight: bold;
   margin-top: 1rem;
   padding: 10px 0;
-  background-color: var(--submit-button);
+  background-color: var(--button);
   color: #fff;
   text-align: center;
   border-radius: 7px;
@@ -115,7 +115,7 @@ h2 {
 }
 
 .submit-btn:hover {
-  background-color: var(--submit-button-hover);
+  background-color: var(--button-hover);
 }
 
 @media (min-width: 768px) {

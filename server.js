@@ -7,7 +7,7 @@ app.get('/api/search/:sort/:limit/:term', async (req, res) => {
   try {
     const { term, sort, limit } = req.params;
 
-    const response = await fetch(`https://www.reddit.com/search.json?q=${term}&sort=${sort}&limit=${limit}`);
+    const response = await fetch(`https://www.reddit.com/search.json?q=${term}&sort=${sort}&limit=${limit}&raw_json=1`);
     const data = await response.json();
     res.json(data);
   } catch (err) {

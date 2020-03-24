@@ -23,9 +23,9 @@ export default {
 :root {
   --canvas: #dae0e6;
   --background: #ffffff;
-  --headerBackground: rgba(0, 121, 211, 1);
-  --submit-button: rgba(0, 121, 211, 1);
-  --submit-button-hover: rgba(0, 121, 211, 0.6);
+  --headerBackground: #FFF;
+  --button: rgba(0, 121, 211, 1);
+  --button-hover: rgba(0, 121, 211, 0.6);
 }
 
 * {
