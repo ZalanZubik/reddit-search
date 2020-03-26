@@ -3,11 +3,11 @@ const fetch = require('node-fetch');
 
 const app = express();
 
-app.get('/api/search/:sort/:limit/:term', async (req, res) => {
+app.get('/api/search/:sort/:time/:limit/:term', async (req, res) => {
   try {
-    const { term, sort, limit } = req.params;
+    const { term, sort, time, limit } = req.params;
 
-    const response = await fetch(`https://www.reddit.com/search.json?q=${term}&sort=${sort}&limit=${limit}&raw_json=1`);
+    const response = await fetch(`https://www.reddit.com/search.json?q=${term}&sort=${sort}&t=${time}&limit=${limit}&raw_json=1`);
     const data = await response.json();
     res.json(data);
   } catch (err) {

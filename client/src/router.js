@@ -12,7 +12,7 @@ export default new Router({
       name: 'home'
     },
     {
-      path: '/search/:sort/:limit/:term',
+      path: '/search/:sort/:time/:limit/:term',
       name: 'results',
       component: Results
     }

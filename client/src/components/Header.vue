@@ -3,6 +3,12 @@
     <a href="/">
       <img :src="logo" alt="findit-logo" />
     </a>
+    <a
+      class="visit-reddit"
+      href="https://reddit.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Visit reddit</a>
   </nav>
 </template>
 
@@ -27,17 +33,33 @@ export default {
   padding: 0 5px;
   border-radius: 7px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 1.5rem;
 }
 
 img {
   height: 3rem;
 }
 
+.visit-reddit {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: var(--button);
+  font-weight: bold;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 9px 0;
+}
+
+.visit-reddit:hover {
+  color: var(--button-hover);
+}
+
 @media (min-width: 768px) {
   .header {
-    justify-content: flex-start;
-    padding-left: 3rem;
+    justify-content: space-between;
+    padding: 0 3rem;
   }
 }
 </style>

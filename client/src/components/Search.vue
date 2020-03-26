@@ -1,6 +1,6 @@
 <template>
   <section class="search">
-    <h2>Search on Reddit</h2>
+    <h2>Search on reddit</h2>
     <form v-on:submit.prevent="onSubmit">
       <input
         type="text"
@@ -30,6 +30,17 @@
             <option value="100">100</option>
           </select>
         </div>
+        <div class="time">
+          <label for="time">Posts From</label>
+          <select v-model="time">
+            <option value="hour">Past Hour</option>
+            <option value="day">Past 24 Hours</option>
+            <option value="week">Past Week</option>
+            <option value="month">Past Month</option>
+            <option value="year">Past Year</option>
+            <option default value="all">All Time</option>
+          </select>
+        </div>
       </div>
       <input type="submit" value="Search" class="submit-btn" />
     </form>
@@ -43,12 +54,15 @@ export default {
     return {
       term: "",
       sort: "relevance",
-      limit: "25"
+      limit: "25",
+      time: "all"
     };
   },
   methods: {
     onSubmit() {
-      this.$router.push(`/search/${this.sort}/${this.limit}/${this.term}`);
+      this.$router.push(
+        `/search/${this.sort}/${this.time}/${this.limit}/${this.term}`
+      );
     }
   }
 };
@@ -81,16 +95,18 @@ h2 {
 }
 
 .sort,
-.limit {
+.limit,
+.time {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 160px;
   margin: auto;
   margin-top: 0.6rem;
 }
 
 .sort select,
-.limit select {
+.limit select,
+.time select {
   border: 1px solid gray;
   border-radius: 4px;
   padding: 5px;
@@ -109,8 +125,9 @@ h2 {
   background-color: var(--button);
   color: #fff;
   text-align: center;
-  border-radius: 7px;
+  border-radius: 5px;
   transition-duration: 0.3s;
+  border: none;
   outline: none;
 }
 
@@ -121,8 +138,15 @@ h2 {
 @media (min-width: 768px) {
   .search-options {
     display: flex;
-    width: 60%;
+    justify-content: center;
     margin: auto;
+  }
+
+  .sort,
+  .time,
+  .limit {
+    margin: 0 1rem;
+    margin-top: 10px;
   }
 }
 </style>

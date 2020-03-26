@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Search />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
 :root {
   --canvas: #dae0e6;
   --background: #ffffff;
-  --headerBackground: #FFF;
+  --headerBackground: #fff;
   --button: rgba(0, 121, 211, 1);
   --button-hover: rgba(0, 121, 211, 0.6);
 }
@@ -36,7 +36,8 @@ export default {
 
 body {
   font-family: "IBM Plex Sans", Arial, sans-serif;
-  line-height: 1;
+  line-height: 1.1;
   background-color: var(--canvas);
+  overflow-y: scroll;
 }
 </style>
