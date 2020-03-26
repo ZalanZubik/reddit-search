@@ -10,6 +10,7 @@
 - Axios
 - Nodemon
 - Concurrently
+- Dotenv
 - Google Fonts
 
 ## About
